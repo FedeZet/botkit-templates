@@ -8,6 +8,8 @@ This template is built with the documentation of [discord.js Guide](https://disc
 
 ### Install Dependencies
 
+_Not needed if BotKit installed the dependencies for you._
+
 ```bash
 npm install
 ```
