@@ -6,7 +6,7 @@ module.exports = {
 		.setDescription('🏓 Reply with pong!'),
 	async execute(interaction) {
 		await interaction.reply(
-			':ping_pong: `' + interaction.client.ws.ping + ' ms.'
+			':ping_pong: `' + interaction.client.ws.ping + '` ms.'
 		);
 	},
 };

@@ -4,7 +4,7 @@ module.exports = {
 	aliases: [],
 	async execute(message, args) {
 		message.reply(
-			`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`
+			`**Server name:** ${message.guild.name}\n**Total members:** ${message.guild.memberCount}`
 		);
 	},
 };

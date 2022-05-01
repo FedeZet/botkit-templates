@@ -33,10 +33,12 @@ client.on('messageCreate', async (message) => {
 		message.reply(args.join(' '));
 	} else if (command === 'server') {
 		message.reply(
-			`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`
+			`**Server name:** ${message.guild.name}\n**Total members:** ${message.guild.memberCount}`
 		);
 	} else if (command === 'user') {
-		message.reply(`Your tag: ${message.user.tag}\nYour id: ${message.user.id}`);
+		message.reply(
+			`**Your tag:** ${message.member.user.tag}\n**Your id:** ${message.member.user.id}`
+		);
 	}
 });
 

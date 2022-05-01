@@ -25,11 +25,11 @@ client.on('interactionCreate', async (interaction) => {
 		await interaction.reply('Pong!');
 	} else if (commandName === 'server') {
 		await interaction.reply(
-			`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`
+			`**Server name:** ${interaction.guild.name}\n**Total members:** ${interaction.guild.memberCount}`
 		);
 	} else if (commandName === 'user') {
 		await interaction.reply(
-			`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`
+			`**Your tag:** ${interaction.user.tag}\n**Your id:** ${interaction.user.id}`
 		);
 	}
 });
@@ -52,10 +52,12 @@ client.on('messageCreate', async (message) => {
 		message.reply(args.join(' '));
 	} else if (command === 'server') {
 		message.reply(
-			`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`
+			`**Server name:** ${message.guild.name}\n**Total members:** ${message.guild.memberCount}`
 		);
 	} else if (command === 'user') {
-		message.reply(`Your tag: ${message.user.tag}\nYour id: ${message.user.id}`);
+		message.reply(
+			`**Your tag:** ${message.member.user.tag}\n**Your id:** ${message.member.user.id}`
+		);
 	}
 });
 
