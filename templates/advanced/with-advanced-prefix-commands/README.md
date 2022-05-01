@@ -1,6 +1,6 @@
 # 🤖 Advanced Discord Bot
 
-Template for a advanced Discord Bot built with [Discord.js](https://discord.js.org). It's a good starting point for new bot developers.
+Template for a advanced Discord Bot built with [Discord.js](https://discord.js.org).
 
 This template is built with the documentation of [discord.js Guide](https://discordjs.guide/). For more information refer to that guide.
 
