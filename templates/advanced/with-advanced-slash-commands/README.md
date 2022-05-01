@@ -14,7 +14,7 @@ npm install
 
 ### Configure Bot
 
-Enter your bot's token, clientId and guildId in `.env`. You can find your token [here](https://discordapp.com/developers/applications/me).
+Enter your bot's token, clientId and guildId in `.env`. Rename `.env.example` to `.env`. You can find your token [here](https://discordapp.com/developers/applications/me).
 
 ```
 # Discord Bot
