@@ -6,8 +6,8 @@ const { Client, Intents } = require('discord.js');
 
 // Create a new client instance
 const client = new Client({
-	intents: [Intents.FLAGS.GUILDS],
-	partials: ['MESSAGE'],
+	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+	partials: ['MESSAGE', 'CHANNEL'],
 });
 
 // When the client is ready, run this code (only once)
@@ -35,7 +35,7 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 // When the client receives a message, run this code
-client.on('message', async (message) => {
+client.on('messageCreate', async (message) => {
 	const prefix = process.env.PREFIX;
 
 	if (message.author.bot) return;

@@ -6,14 +6,14 @@ const { Client, Collection, Intents } = require('discord.js');
 
 // Create a new client instance
 const client = new Client({
-	intents: [Intents.FLAGS.GUILDS],
-	partials: ['MESSAGE'],
+	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+	partials: ['MESSAGE', 'CHANNEL'],
 });
 
 // Events
 console.log('📚 Events list');
 const eventFiles = fs
-	.readdirSync('./events')
+	.readdirSync('./src/events')
 	.filter((file) => file.endsWith('.js'));
 
 for (const file of eventFiles) {
@@ -31,10 +31,10 @@ console.log('');
 // Slash Commands
 client.slashCmds = new Collection();
 console.log('📚 Slash Commands List (/)');
-const folderSlashCmds = fs.readdirSync('./slash_cmds/');
+const folderSlashCmds = fs.readdirSync('./src/slash_cmds/');
 for (const module of folderSlashCmds) {
 	const commandFiles = fs
-		.readdirSync(`./slash_cmds/${module}`)
+		.readdirSync(`./src/slash_cmds/${module}`)
 		.filter((file) => file.endsWith('.js'));
 
 	console.log(`🧮 Category: ${module}`);
@@ -51,10 +51,10 @@ for (const module of folderSlashCmds) {
 // Prefix Commands
 client.prefixCmds = new Collection();
 console.log(`📚 Prefix Commands List (${process.env.PREFIX})`);
-const folderPrefixCmds = fs.readdirSync('./prefix_cmds/');
+const folderPrefixCmds = fs.readdirSync('./src/prefix_cmds/');
 for (const module of folderPrefixCmds) {
 	const commandFiles = fs
-		.readdirSync(`./prefix_cmds/${module}`)
+		.readdirSync(`./src/prefix_cmds/${module}`)
 		.filter((file) => file.endsWith('.js'));
 
 	console.log(`🧮 Category: ${module}`);

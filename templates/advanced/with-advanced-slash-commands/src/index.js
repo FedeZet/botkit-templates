@@ -13,7 +13,7 @@ const client = new Client({
 // Events
 console.log('📚 Events list');
 const eventFiles = fs
-	.readdirSync('./events')
+	.readdirSync('./src/events')
 	.filter((file) => file.endsWith('.js'));
 
 for (const file of eventFiles) {
@@ -31,10 +31,10 @@ console.log('');
 // Commands
 client.commands = new Collection();
 console.log('📚 Commands List');
-const folder = fs.readdirSync('./commands/');
+const folder = fs.readdirSync('./src/commands/');
 for (const module of folder) {
 	const commandFiles = fs
-		.readdirSync(`./commands/${module}`)
+		.readdirSync(`./src/commands/${module}`)
 		.filter((file) => file.endsWith('.js'));
 
 	console.log(`🧮 Category: ${module}`);

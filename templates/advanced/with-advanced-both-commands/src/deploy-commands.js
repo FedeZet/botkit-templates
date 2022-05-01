@@ -5,10 +5,10 @@ require('dotenv').config();
 
 const commands = [];
 
-const folder = fs.readdirSync('./slash_cmds/');
+const folder = fs.readdirSync('./src/slash_cmds/');
 for (const module of folder) {
 	const commandFiles = fs
-		.readdirSync(`./slash_cmds/${module}`)
+		.readdirSync(`./src/slash_cmds/${module}`)
 		.filter((file) => file.endsWith('.js'));
 	for (const file of commandFiles) {
 		const command = require(`./slash_cmds/${module}/${file}`);
